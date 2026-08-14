@@ -23,6 +23,7 @@ export default function Projects() {
           <Card
             key={p.name}
             hoverable
+            className="glass"
             styles={{ header: { padding: '16px 24px' }, body: { padding: 24 } }}
             title={
               <Space direction="vertical" size={6}>

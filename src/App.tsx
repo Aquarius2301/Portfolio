@@ -7,6 +7,8 @@ import Projects from './components/Projects';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import SiteFooter from './components/SiteFooter';
+import Background from './components/Background';
+import './components/Glass.css';
 import { getTheme, type ThemeMode } from './theme';
 
 const { Content } = Layout;
@@ -24,10 +26,8 @@ export default function App() {
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, mode);
-    document.body.style.background = mode === 'dark'
-      ? 'linear-gradient(180deg, #0b1220 0%, #141414 45%)'
-      : 'linear-gradient(180deg, #eef4ff 0%, #f5f5f5 40%)';
-    document.body.style.backgroundAttachment = 'fixed';
+    document.body.style.background = 'transparent';
+    document.body.classList.toggle('theme-dark', mode === 'dark');
   }, [mode]);
 
   const toggleTheme = () => setMode((m) => (m === 'dark' ? 'light' : 'dark'));
@@ -35,7 +35,8 @@ export default function App() {
   return (
     <ConfigProvider theme={getTheme(mode)}>
       <AntdApp>
-        <Layout style={{ minHeight: '100vh', background: 'transparent' }}>
+        <Background mode={mode} />
+        <Layout style={{ minHeight: '100vh', background: 'transparent', position: 'relative', zIndex: 1 }}>
           <SiteHeader mode={mode} onToggleTheme={toggleTheme} />
           <Content>
             <Hero />

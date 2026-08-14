@@ -26,7 +26,7 @@ export default function Contact() {
       }}
     >
       <Title level={2}>Contact</Title>
-      <Card styles={{ body: { padding: 24 } }}>
+      <Card className="glass" styles={{ body: { padding: 24 } }}>
         <Space direction="vertical" size={20} style={{ width: '100%' }}>
           <Space align="center" wrap size={12}>
             <MailOutlined style={{ color: token.colorPrimary, fontSize: 18 }} />
