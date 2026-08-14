@@ -1,5 +1,6 @@
 import { Divider, Flex, Tag, Typography, theme as antdTheme } from 'antd';
 import { about, skills } from '../data/content';
+import { getSkillIcon } from '../data/skillIcons';
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -28,11 +29,17 @@ export default function About() {
                   {group.category}
                 </Text>
                 <Flex wrap gap={8}>
-                  {group.items.map((item) => (
-                    <Tag key={item} color="blue" style={{ margin: 0, padding: '4px 10px', fontSize: 13 }}>
-                      {item}
-                    </Tag>
-                  ))}
+                  {group.items.map((item) => {
+                    const Icon = getSkillIcon(item);
+                    return (
+                      <Tag key={item} color="blue" style={{ margin: 0, padding: '4px 10px', fontSize: 13 }}>
+                        <Flex align="center" gap={6} component="span">
+                          <Icon style={{ fontSize: 14 }} />
+                          {item}
+                        </Flex>
+                      </Tag>
+                    );
+                  })}
                 </Flex>
               </Flex>
             ))}

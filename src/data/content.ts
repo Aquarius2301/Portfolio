@@ -55,6 +55,8 @@ export const skills: SkillGroup[] = [
       "RESTful API",
       "JWT",
       "SQL Server",
+      "Clean Architecture",
+      "CQRS",
     ],
   },
   {
@@ -65,12 +67,30 @@ export const skills: SkillGroup[] = [
     category: "Tools",
     items: ["Git", "Postman", "VS Code", "Swagger"],
   },
+];
+
+export interface Certification {
+  title: string;
+  issuer: string;
+  year: string;
+  description: string;
+  certUrl?: string;
+}
+
+export const certifications: Certification[] = [
   {
-    category: "Certifications",
-    items: [
-      "Google Certified Gemini Educator (2026)",
-      "Bachelor of Software Engineering",
-    ],
+    title: "Bachelor of Software Engineering",
+    issuer: "FPT University",
+    year: "2025",
+    description: "Bachelor's degree in Software Engineering, GPA 8.5 / 10.",
+  },
+  {
+    title: "Google Certified Gemini Educator",
+    issuer: "Google",
+    year: "2026",
+    description:
+      "Certification recognizing proficiency in applying Google Gemini AI in education.",
+    certUrl: "/GoogleCertificate.pdf",
   },
 ];
 
@@ -124,10 +144,14 @@ export const projects: Project[] = [
 
 export const education: TimelineEntry[] = [
   {
-    title: "FPT University",
+    title: "FPT University Can Tho Campus",
+    period: "2021 – 2025",
     subtitle: "Bachelor of Software Engineering",
-    period: "GPA 8.5 / 10",
-    details: ["7-time Honorable Student", "Top 5 IT Students — Spring 2023"],
+    details: [
+      "GPA 8.5 / 10",
+      "7-time Honorable Student",
+      "Top 5 IT Students — Spring 2023",
+    ],
   },
   {
     title: "Act Brain Vietnam (Ho Chi Minh)",
@@ -159,5 +183,6 @@ export const navSections = [
   { key: "about", label: "About me", anchor: "#about" },
   { key: "skills", label: "Skills", anchor: "#skills" },
   { key: "projects", label: "Project", anchor: "#projects" },
+  { key: "certifications", label: "Certifications", anchor: "#certifications" },
   { key: "contact", label: "Contact", anchor: "#contact" },
 ];

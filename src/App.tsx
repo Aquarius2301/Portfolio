@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
 import Education from './components/Education';
+import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import SiteFooter from './components/SiteFooter';
 import Background from './components/Background';
@@ -43,6 +44,7 @@ export default function App() {
             <About />
             <Projects />
             <Education />
+            <Certifications />
             <Contact />
           </Content>
           <SiteFooter />
