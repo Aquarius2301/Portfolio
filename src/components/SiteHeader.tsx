@@ -1,12 +1,29 @@
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { Layout, Menu, Switch, Button, Drawer, Grid, theme as antdTheme } from 'antd';
-import { MenuOutlined, MoonFilled, SunFilled } from '@ant-design/icons';
+import {
+  MenuOutlined,
+  MoonFilled,
+  SunFilled,
+  UserOutlined,
+  ToolOutlined,
+  ProjectOutlined,
+  TrophyOutlined,
+  MailOutlined,
+} from '@ant-design/icons';
 import { navSections, profile } from '../data/content';
 import { scrollToSection } from '../utils/scroll';
 import type { ThemeMode } from '../theme';
 
 const { Header } = Layout;
 const { useBreakpoint } = Grid;
+
+const navIcon: Record<string, ReactNode> = {
+  about: <UserOutlined />,
+  skills: <ToolOutlined />,
+  projects: <ProjectOutlined />,
+  certifications: <TrophyOutlined />,
+  contact: <MailOutlined />,
+};
 
 interface Props {
   mode: ThemeMode;
@@ -19,7 +36,7 @@ export default function SiteHeader({ mode, onToggleTheme }: Props) {
   const { token } = antdTheme.useToken();
   const isDark = mode === 'dark';
 
-  const menuItems = navSections.map((s) => ({ key: s.key, label: s.label }));
+  const menuItems = navSections.map((s) => ({ key: s.key, icon: navIcon[s.key], label: s.label }));
 
   const handleClick = (anchor: string) => {
     scrollToSection(anchor);
