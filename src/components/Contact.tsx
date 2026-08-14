@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Button, Card, Space, Typography, theme as antdTheme } from "antd";
 import {
   DownloadOutlined,
@@ -12,7 +11,6 @@ const { Title, Text, Link } = Typography;
 
 export default function Contact() {
   const { token } = antdTheme.useToken();
-  const [certOpen, setCertOpen] = useState(false);
 
   return (
     <section
