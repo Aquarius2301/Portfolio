@@ -1,0 +1,53 @@
+# ─── Dependencies ─────────────────────────────────────────────
+node_modules
+.pnp
+.pnp.js
+.yarn/*
+.yarn/cache
+.yarn/install-state.gz
+
+# ─── Build output ──────────────────────────────────────────────
+dist
+dist-ssr
+*.local
+
+# ─── Logs ──────────────────────────────────────────────────────
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ─── Environment / secrets ────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ─── TypeScript / Vite cache ──────────────────────────────────
+*.tsbuildinfo
+.vite
+.cache
+
+# ─── Test / coverage ──────────────────────────────────────────
+coverage
+*.lcov
+
+# ─── Editor / IDE ─────────────────────────────────────────────
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.swp
+*.swo
+*.sublime-*
+
+# ─── OS ───────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ─── Misc ─────────────────────────────────────────────────────
+.turbo
+.fleet
