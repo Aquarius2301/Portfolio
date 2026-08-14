@@ -32,6 +32,7 @@ const skillIconMap: Record<string, IconType> = {
   'C#': SiSharp,
   'ASP.NET Core': SiDotnet,
   'Entity Framework Core': SiDotnet,
+  'EF Core': SiDotnet,
   'RESTful API': FaPlug,
   JWT: SiJsonwebtokens,
   'SQL Server': FaDatabase,
@@ -39,8 +40,10 @@ const skillIconMap: Record<string, IconType> = {
   CQRS: FaBarsStaggered,
   // Frontend
   'React (TypeScript)': SiReact,
+  'React': SiReact,
   'TanStack Query': FaCode,
   'Ant Design (AntD)': SiAntdesign,
+  'Gemini API': SiGooglegemini,
   // Tools
   Git: SiGit,
   Postman: SiPostman,

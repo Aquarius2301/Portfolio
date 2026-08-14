@@ -154,6 +154,17 @@ export const education: TimelineEntry[] = [
     ],
   },
   {
+    title: "Generative AI - FPT University Can Tho",
+    period: "2026",
+    subtitle: "Use AI tools to build software applications",
+    details: [
+      "Completed a Generative AI course, gaining hands-on experience with AI tools and its applications in software development.",
+    ],
+  },
+];
+
+export const experience: TimelineEntry[] = [
+  {
     title: "Act Brain Vietnam (Ho Chi Minh)",
     subtitle: "Backend / Frontend Intern",
     period: "Jan 2024 – Apr 2024",

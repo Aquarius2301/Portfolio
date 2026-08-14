@@ -1,4 +1,4 @@
-import { Divider, Flex, Tag, Typography, theme as antdTheme } from 'antd';
+import { Divider, Flex, Row, Col, Tag, Typography, theme as antdTheme } from 'antd';
 import { about, skills } from '../data/content';
 import { getSkillIcon } from '../data/skillIcons';
 
@@ -11,40 +11,43 @@ export default function About() {
     <section id="about" style={{ maxWidth: 980, margin: '0 auto', padding: '24px 24px 56px' }}>
       <Title level={2}>About me</Title>
       <div className="glass" style={{ padding: '8px 24px 24px', marginBottom: 24 }}>
-        <Divider orientation="left" style={{ marginTop: 16 }}>
-          <Text strong>Introduction</Text>
-        </Divider>
-        <Paragraph style={{ fontSize: 17, color: token.colorTextSecondary, lineHeight: 1.7 }}>
-          {about.intro}
-        </Paragraph>
-
-        <div id="skills" style={{ scrollMarginTop: 80 }}>
-          <Divider orientation="left" style={{ marginTop: 16 }}>
-            <Text strong>Skills</Text>
-          </Divider>
-          <Flex vertical gap={20}>
-            {skills.map((group) => (
-              <Flex key={group.category} vertical gap={10}>
-                <Text strong style={{ fontSize: 15 }}>
-                  {group.category}
-                </Text>
-                <Flex wrap gap={8}>
-                  {group.items.map((item) => {
-                    const Icon = getSkillIcon(item);
-                    return (
-                      <Tag key={item} color="blue" style={{ margin: 0, padding: '4px 10px', fontSize: 13 }}>
-                        <Flex align="center" gap={6} component="span">
-                          <Icon style={{ fontSize: 14 }} />
-                          {item}
-                        </Flex>
-                      </Tag>
-                    );
-                  })}
+        <Row gutter={[32, 24]}>
+          <Col xs={24} lg={11}>
+            <Divider orientation="left" style={{ marginTop: 16 }}>
+              <Text strong>Introduction</Text>
+            </Divider>
+            <Paragraph style={{ fontSize: 17, color: token.colorTextSecondary, lineHeight: 1.7 }}>
+              {about.intro}
+            </Paragraph>
+          </Col>
+          <Col xs={24} lg={13} id="skills" style={{ scrollMarginTop: 80 }}>
+            <Divider orientation="left" style={{ marginTop: 16 }}>
+              <Text strong>Skills</Text>
+            </Divider>
+            <Flex vertical gap={20}>
+              {skills.map((group) => (
+                <Flex key={group.category} vertical gap={10}>
+                  <Text strong style={{ fontSize: 15 }}>
+                    {group.category}
+                  </Text>
+                  <Flex wrap gap={8}>
+                    {group.items.map((item) => {
+                      const Icon = getSkillIcon(item);
+                      return (
+                        <Tag key={item} color="blue" style={{ margin: 0, padding: '4px 10px', fontSize: 13 }}>
+                          <Flex align="center" gap={6} component="span">
+                            <Icon style={{ fontSize: 14 }} />
+                            {item}
+                          </Flex>
+                        </Tag>
+                      );
+                    })}
+                  </Flex>
                 </Flex>
-              </Flex>
-            ))}
-          </Flex>
-        </div>
+              ))}
+            </Flex>
+          </Col>
+        </Row>
       </div>
     </section>
   );

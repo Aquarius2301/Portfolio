@@ -1,6 +1,7 @@
-import { Card, List, Space, Tag, Typography, theme as antdTheme } from 'antd';
+import { Divider, Flex, List, Space, Tag, Typography, theme as antdTheme } from 'antd';
 import { GithubOutlined } from '@ant-design/icons';
 import { projects } from '../data/content';
+import { getSkillIcon } from '../data/skillIcons';
 
 const { Title, Paragraph, Text, Link } = Typography;
 
@@ -18,14 +19,11 @@ export default function Projects() {
       }}
     >
       <Title level={2}>Project</Title>
-      <Space direction="vertical" size={24} style={{ width: '100%' }}>
-        {projects.map((p) => (
-          <Card
-            key={p.name}
-            hoverable
-            className="glass"
-            styles={{ header: { padding: '16px 24px' }, body: { padding: 24 } }}
-            title={
+      <div className="glass" style={{ padding: '8px 24px 24px', marginBottom: 24 }}>
+        {projects.map((p, i) => (
+          <div key={p.name}>
+            {i > 0 && <Divider />}
+            <Space style={{ width: '100%', justifyContent: 'space-between' }} align="start">
               <Space direction="vertical" size={6}>
                 <Text strong style={{ fontSize: 20 }}>
                   {p.name}
@@ -34,14 +32,13 @@ export default function Projects() {
                   {p.stack} · {p.period}
                 </Text>
               </Space>
-            }
-            extra={
               <Link href={p.repoUrl} target="_blank" rel="noopener noreferrer">
                 <GithubOutlined /> GitHub
               </Link>
-            }
-          >
-            <Paragraph style={{ color: token.colorTextSecondary }}>{p.summary}</Paragraph>
+            </Space>
+            <Paragraph style={{ color: token.colorTextSecondary, marginTop: 12 }}>
+              {p.summary}
+            </Paragraph>
             <List
               size="small"
               dataSource={p.highlights}
@@ -52,15 +49,21 @@ export default function Projects() {
               )}
             />
             <Space wrap size={8} style={{ marginTop: 12 }}>
-              {p.tags.map((t) => (
-                <Tag key={t} style={{ margin: 0 }}>
-                  {t}
-                </Tag>
-              ))}
+              {p.tags.map((t) => {
+                const Icon = getSkillIcon(t);
+                return (
+                  <Tag key={t} style={{ margin: 0, padding: '4px 10px', fontSize: 13 }}>
+                    <Flex align="center" gap={6} component="span">
+                      <Icon style={{ fontSize: 14 }} />
+                      {t}
+                    </Flex>
+                  </Tag>
+                );
+              })}
             </Space>
-          </Card>
+          </div>
         ))}
-      </Space>
+      </div>
     </section>
   );
 }
