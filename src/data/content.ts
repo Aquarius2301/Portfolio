@@ -92,6 +92,14 @@ export const certifications: Certification[] = [
       "Certification recognizing proficiency in applying Google Gemini AI in education.",
     certUrl: "/GoogleCertificate.pdf",
   },
+  {
+    title: "Practical AI Training Program",
+    issuer: "FPT University Can Tho campus",
+    year: "2026",
+    description:
+      "Completed a Generative AI course, gaining hands-on experience with AI tools and its applications in software development.",
+    certUrl: "/PracticalAICertificate.pdf",
+  },
 ];
 
 export const projects: Project[] = [
@@ -154,7 +162,7 @@ export const education: TimelineEntry[] = [
     ],
   },
   {
-    title: "Generative AI - FPT University Can Tho",
+    title: "Practical AI Training Program - FPT University Can Tho campus",
     period: "2026",
     subtitle: "Use AI tools to build software applications",
     details: [
