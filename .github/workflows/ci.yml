@@ -27,7 +27,7 @@ jobs:
         run: npm run build
 
   deploy:
-    name: Trigger Render Deploy Hook
+    name: Trigger Deploy Hooks (Render & Vercel)
     runs-on: ubuntu-latest
     needs: build # only deploy after CI passes
     if: github.ref == 'refs/heads/main' # skip for PRs
@@ -36,3 +36,7 @@ jobs:
         run: curl -fSL "$RENDER_DEPLOY_HOOK"
         env:
           RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+      - name: Invoke Vercel Deploy Hook
+        run: curl -fSL -X POST "$VERCEL_DEPLOY_HOOK"
+        env:
+          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}

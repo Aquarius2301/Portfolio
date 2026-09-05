@@ -12,6 +12,8 @@ import {
   SiGooglegemini,
   SiJsonwebtokens,
   SiGraphql,
+  SiGoogle,
+  SiRedis,
 } from 'react-icons/si';
 import {
   FaLanguage,
@@ -21,6 +23,7 @@ import {
   FaGraduationCap,
   FaLayerGroup,
   FaBarsStaggered,
+  FaBolt,
 } from 'react-icons/fa6';
 import type { IconType } from 'react-icons';
 
@@ -38,12 +41,20 @@ const skillIconMap: Record<string, IconType> = {
   'SQL Server': FaDatabase,
   'Clean Architecture': FaLayerGroup,
   CQRS: FaBarsStaggered,
+  OAuth: SiGoogle,
   // Frontend
   'React (TypeScript)': SiReact,
   'React': SiReact,
+  TypeScript: SiTypescript,
   'TanStack Query': FaCode,
   'Ant Design (AntD)': SiAntdesign,
+  'Ant Design': SiAntdesign,
   'Gemini API': SiGooglegemini,
+  'Google OAuth': SiGoogle,
+  Redis: SiRedis,
+  Zustand: FaBolt,
+  // i18next state / localization
+  i18next: FaLanguage,
   // Tools
   Git: SiGit,
   Postman: SiPostman,

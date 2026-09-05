@@ -1,5 +1,5 @@
 import { Divider, Flex, List, Space, Tag, Typography, theme as antdTheme } from 'antd';
-import { GithubOutlined } from '@ant-design/icons';
+import { GithubOutlined, GlobalOutlined } from '@ant-design/icons';
 import { projects } from '../data/content';
 import { getSkillIcon } from '../data/skillIcons';
 
@@ -32,9 +32,16 @@ export default function Projects() {
                   {p.stack} · {p.period}
                 </Text>
               </Space>
-              <Link href={p.repoUrl} target="_blank" rel="noopener noreferrer">
-                <GithubOutlined /> GitHub
-              </Link>
+              <Space size="middle">
+                {p.demoUrl && (
+                  <Link href={p.demoUrl} target="_blank" rel="noopener noreferrer">
+                    <GlobalOutlined /> Live Demo
+                  </Link>
+                )}
+                <Link href={p.repoUrl} target="_blank" rel="noopener noreferrer">
+                  <GithubOutlined /> GitHub
+                </Link>
+              </Space>
             </Space>
             <Paragraph style={{ color: token.colorTextSecondary, marginTop: 12 }}>
               {p.summary}

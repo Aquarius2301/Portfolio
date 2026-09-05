@@ -14,6 +14,7 @@ export interface Project {
   highlights: string[];
   tags: string[];
   repoUrl: string;
+  demoUrl?: string;
 }
 
 export interface TimelineEntry {
@@ -57,11 +58,18 @@ export const skills: SkillGroup[] = [
       "SQL Server",
       "Clean Architecture",
       "CQRS",
+      "Google OAuth",
     ],
   },
   {
     category: "Frontend",
-    items: ["React (TypeScript)", "TanStack Query", "Ant Design (AntD)"],
+    items: [
+      "React (TypeScript)",
+      "TanStack Query",
+      "Ant Design (AntD)",
+      "Zustand",
+      "i18next",
+    ],
   },
   {
     category: "Tools",
@@ -79,12 +87,6 @@ export interface Certification {
 
 export const certifications: Certification[] = [
   {
-    title: "Bachelor of Software Engineering",
-    issuer: "FPT University",
-    year: "2025",
-    description: "Bachelor's degree in Software Engineering, GPA 8.5 / 10.",
-  },
-  {
     title: "Google Certified Gemini Educator",
     issuer: "Google",
     year: "2026",
@@ -100,30 +102,44 @@ export const certifications: Certification[] = [
       "Completed a Generative AI course, gaining hands-on experience with AI tools and its applications in software development.",
     certUrl: "/PracticalAICertificate.pdf",
   },
+  {
+    title: "Bachelor of Software Engineering",
+    issuer: "FPT University",
+    year: "2025",
+    description: "Bachelor's degree in Software Engineering, GPA 8.5 / 10.",
+  },
 ];
 
 export const projects: Project[] = [
   {
-    name: "My Blog",
-    period: "2025 – 2026",
+    name: "MyTarotReader",
+    period: "2026 – now",
     stack: "Backend, Frontend",
     summary:
-      "A full-stack social blogging platform enabling users to create multimedia posts, upload images, " +
-      "and interact via real-time likes and comments.",
+      "An AI-powered tarot reading platform that generates context-aware interpretations " +
+      "and hosts real-time interactive AI chat sessions.",
     highlights: [
-      "Designed and implemented robust RESTful APIs using ASP.NET Core following a clean, layered architecture for scalable backend management.",
-      "Integrated secure identity management using JWT authentication with an advanced Access and Refresh Token mechanism.",
-      "Leveraged Gemini API to architect an AI-driven module that analyzes and interprets Tarot spreads, delivering personalized, context-aware insights to users.",
+      "Architected a full-stack AI tarot reading application using .NET 8 (Clean Architecture: Domain/Application/Infrastructure/API) and React 19 (TypeScript) with Vite.",
+      "Implemented secure authentication and session control using Google OAuth, JWT-based tokens, and Redis caching for rate limiting / cooldown management.",
+      "Integrated Google Gemini API to generate context-aware tarot interpretations and real-time interactive AI chat sessions.",
+      "Developed rich frontend features using Ant Design, TanStack Query for server-state caching, Zustand for global UI state, and i18next for multi-language support (EN/VI).",
     ],
     tags: [
       "ASP.NET Core",
-      "EF Core",
-      "JWT",
+      "Clean Architecture",
       "React",
-      "TanStack Query",
+      "TypeScript",
+      "Google OAuth",
+      "JWT",
+      "Redis",
       "Gemini API",
+      "Ant Design",
+      "TanStack Query",
+      "Zustand",
+      "i18next",
     ],
-    repoUrl: "https://github.com/Aquarius2301/MyBlog-System",
+    repoUrl: "https://github.com/Aquarius2301/MyTarotReader",
+    demoUrl: "https://my-tarot-reader.vercel.app/",
   },
   {
     name: "AI Workspace",
@@ -148,9 +164,39 @@ export const projects: Project[] = [
     ],
     repoUrl: "https://github.com/Aquarius2301/AI-Workspace",
   },
+  {
+    name: "My Blog",
+    period: "2025 – 2026",
+    stack: "Backend, Frontend",
+    summary:
+      "A full-stack social blogging platform enabling users to create multimedia posts, upload images, " +
+      "and interact via real-time likes and comments.",
+    highlights: [
+      "Designed and implemented robust RESTful APIs using ASP.NET Core following a clean, layered architecture for scalable backend management.",
+      "Integrated secure identity management using JWT authentication with an advanced Access and Refresh Token mechanism.",
+      "Leveraged Gemini API to architect an AI-driven module that enhances user engagement with personalized, context-aware insights.",
+    ],
+    tags: [
+      "ASP.NET Core",
+      "EF Core",
+      "JWT",
+      "React",
+      "TanStack Query",
+      "Gemini API",
+    ],
+    repoUrl: "https://github.com/Aquarius2301/MyBlog-System",
+  },
 ];
 
 export const education: TimelineEntry[] = [
+  {
+    title: "Practical AI Training Program - FPT University Can Tho campus",
+    period: "2026",
+    subtitle: "Use AI tools to build software applications",
+    details: [
+      "Completed a Generative AI course, gaining hands-on experience with AI tools and its applications in software development.",
+    ],
+  },
   {
     title: "FPT University Can Tho Campus",
     period: "2021 – 2025",
@@ -159,14 +205,6 @@ export const education: TimelineEntry[] = [
       "GPA 8.5 / 10",
       "7-time Honorable Student",
       "Top 5 IT Students — Spring 2023",
-    ],
-  },
-  {
-    title: "Practical AI Training Program - FPT University Can Tho campus",
-    period: "2026",
-    subtitle: "Use AI tools to build software applications",
-    details: [
-      "Completed a Generative AI course, gaining hands-on experience with AI tools and its applications in software development.",
     ],
   },
 ];
