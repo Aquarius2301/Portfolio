@@ -139,7 +139,7 @@ export const projects: Project[] = [
       "i18next",
     ],
     repoUrl: "https://github.com/Aquarius2301/MyTarotReader",
-    demoUrl: "https://my-tarot-reader.vercel.app/",
+    demoUrl: "https://mytarotreader.io.vn",
   },
   {
     name: "AI Workspace",
