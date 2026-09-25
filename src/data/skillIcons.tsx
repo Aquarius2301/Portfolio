@@ -14,7 +14,8 @@ import {
   SiGraphql,
   SiGoogle,
   SiRedis,
-} from 'react-icons/si';
+  SiPostgresql,
+} from "react-icons/si";
 import {
   FaLanguage,
   FaDatabase,
@@ -24,33 +25,34 @@ import {
   FaLayerGroup,
   FaBarsStaggered,
   FaBolt,
-} from 'react-icons/fa6';
-import type { IconType } from 'react-icons';
+} from "react-icons/fa6";
+import type { IconType } from "react-icons";
 
 const skillIconMap: Record<string, IconType> = {
   // Languages
-  'English (Professional Working)': FaLanguage,
-  'Vietnamese (Native)': FaLanguage,
+  "English (Professional Working)": FaLanguage,
+  "Vietnamese (Native)": FaLanguage,
   // Backend
-  'C#': SiSharp,
-  'ASP.NET Core': SiDotnet,
-  'Entity Framework Core': SiDotnet,
-  'EF Core': SiDotnet,
-  'RESTful API': FaPlug,
+  "C#": SiSharp,
+  "ASP.NET Core": SiDotnet,
+  "Entity Framework Core": SiDotnet,
+  "EF Core": SiDotnet,
+  "RESTful API": FaPlug,
   JWT: SiJsonwebtokens,
-  'SQL Server': FaDatabase,
-  'Clean Architecture': FaLayerGroup,
+  "SQL Server": FaDatabase,
+  PostgreSQL: SiPostgresql,
+  "Clean Architecture": FaLayerGroup,
   CQRS: FaBarsStaggered,
   OAuth: SiGoogle,
   // Frontend
-  'React (TypeScript)': SiReact,
-  'React': SiReact,
+  "React (TypeScript)": SiReact,
+  React: SiReact,
   TypeScript: SiTypescript,
-  'TanStack Query': FaCode,
-  'Ant Design (AntD)': SiAntdesign,
-  'Ant Design': SiAntdesign,
-  'Gemini API': SiGooglegemini,
-  'Google OAuth': SiGoogle,
+  "TanStack Query": FaCode,
+  "Ant Design (AntD)": SiAntdesign,
+  "Ant Design": SiAntdesign,
+  "Gemini API": SiGooglegemini,
+  "Google OAuth": SiGoogle,
   Redis: SiRedis,
   Zustand: FaBolt,
   // i18next state / localization
@@ -58,11 +60,11 @@ const skillIconMap: Record<string, IconType> = {
   // Tools
   Git: SiGit,
   Postman: SiPostman,
-  'VS Code': FaCode,
+  "VS Code": FaCode,
   Swagger: SiSwagger,
   // Certifications
-  'Google Certified Gemini Educator': SiGooglegemini,
-  'Bachelor of Software Engineering': FaGraduationCap,
+  "Google Certified Gemini Educator": SiGooglegemini,
+  "Bachelor of Software Engineering": FaGraduationCap,
 };
 
 export function getSkillIcon(label: string): IconType {

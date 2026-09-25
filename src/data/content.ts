@@ -121,7 +121,7 @@ export const projects: Project[] = [
     highlights: [
       "Architected a full-stack AI tarot reading application using .NET 8 (Clean Architecture: Domain/Application/Infrastructure/API) and React 19 (TypeScript) with Vite.",
       "Implemented secure authentication and session control using Google OAuth, JWT-based tokens, and Redis caching for rate limiting / cooldown management.",
-      "Integrated Google Gemini API to generate context-aware tarot interpretations and real-time interactive AI chat sessions.",
+      "Integrated Google Gemini API to generate context-aware tarot interpretations.",
       "Developed rich frontend features using Ant Design, TanStack Query for server-state caching, Zustand for global UI state, and i18next for multi-language support (EN/VI).",
     ],
     tags: [
@@ -137,6 +137,7 @@ export const projects: Project[] = [
       "TanStack Query",
       "Zustand",
       "i18next",
+      "PostgreSQL",
     ],
     repoUrl: "https://github.com/Aquarius2301/MyTarotReader",
     demoUrl: "https://mytarotreader.io.vn",
